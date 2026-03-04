@@ -24,6 +24,7 @@ public class SecurityConfig {
 
                 .anyRequest().authenticated();
             )
+            .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }

@@ -28,8 +28,8 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/login").permitAll()
-                .requestMatchers("/cadastro").permitAll()
+                .requestMatchers("/auth/login").permitAll()
+                .requestMatchers("/auth/cadastro").permitAll()
                 .requestMatchers("/ingredientes/**").authenticated()
                 .requestMatchers("/clientes/**").authenticated()
                 .requestMatchers("/comandas/**").authenticated()
